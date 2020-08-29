@@ -25,7 +25,9 @@ export default function PersonDetails(props) {
     )
 }
 
-PersonDetails.getInitialProps = async () => {
+PersonDetails.getInitialProps = async (ctx) => { //context to persist data from main component definition
+    const {query} = ctx;
+    console.log("ctx: ", query)
     const getRandom = await
         fetch(`https://randomuser.me/api/`)
           .then(response => response.json()) // parse JSON from request
@@ -43,5 +45,4 @@ PersonDetails.getInitialProps = async () => {
 // randomUser is invisible to a crawler
 
 // randoUser is visible to a crawler
-
 ///
