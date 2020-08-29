@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-
+import Link from 'next/link';
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -57,6 +57,18 @@ export default function Home() {
               A new Route
             </p>
           </a>
+
+          <Link as="/something/details" href="/[deets]/[person]">
+          <a
+            className={styles.card}
+          >
+            <h3>Varying Details</h3>
+            <p>
+              A new Route
+            </p>
+          </a>
+          </Link>
+          
         </div>
       </main>
 
