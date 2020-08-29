@@ -43,6 +43,5 @@ PersonDetails.getInitialProps = async (ctx) => { //context to persist data from 
 // while the InitialProps version of `getRandom` is fired at build time of the page after user requests a page
 
 // randomUser is invisible to a crawler
-
 // randoUser is visible to a crawler
 ///
