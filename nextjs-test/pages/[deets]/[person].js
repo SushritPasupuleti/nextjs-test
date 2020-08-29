@@ -33,5 +33,15 @@ PersonDetails.getInitialProps = async () => {
             return{randoUser :resultData.results[0].name.first + " " + resultData.results[0].name.last}
           })
 
-    return await getRandom
+    return getRandom
 }
+
+/// Note
+// Hooks based `getRandom` is fired each time the page loads on user side (not on server side on first rended)
+// while the InitialProps version of `getRandom` is fired at build time of the page after user requests a page
+
+// randomUser is invisible to a crawler
+
+// randoUser is visible to a crawler
+
+///
