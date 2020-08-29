@@ -59,9 +59,9 @@ export default function PersonDetails(props) {
 }
 
 PersonDetails.getInitialProps = async (ctx) => { //context to persist data from main component definition
-    if (!ctx.req) {
-        return { randoUser: '' }
-    }
+    // if (!ctx.req) {
+    //     return { randoUser: '' }
+    // }
 
     const { query } = ctx;
     console.log("ctx: ", query)
