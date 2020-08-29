@@ -49,7 +49,7 @@ export default function PersonDetails(props) {
     return (
         <Card className={classes.root}>
             <CardContent>
-                <Typography className={classes.title} gutterBottom>
+                <Typography className={classes.title}>
                     Yo from {randomUser} & {props.randoUser}
                 </Typography>
                 <h1></h1>
