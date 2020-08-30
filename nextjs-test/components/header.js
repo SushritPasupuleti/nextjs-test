@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { signin, signout, useSession } from 'next-auth/client'
+import { signIn, signOut, useSession } from 'next-auth/client'
 import styles from './header.module.css'
 
 // The approach used in this component shows how to built a sign in and sign out
@@ -22,7 +22,7 @@ export default function Header () {
                 className={styles.buttonPrimary}
                 onClick={(e) => {
                   e.preventDefault()
-                  signin()
+                  signIn()
                 }}
               >
                 Sign in
@@ -39,7 +39,7 @@ export default function Header () {
                 className={styles.button}
                 onClick={(e) => {
                   e.preventDefault()
-                  signout()
+                  signOut()
                 }}
               >
                 Sign out
