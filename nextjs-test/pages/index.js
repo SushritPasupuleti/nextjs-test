@@ -2,11 +2,13 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link';
 import Nav from '../components/nav'
+import Header from '../components/header'
 
 export default function Home() {
   return (
     <>
-    <Nav/>
+    <Header/>
+    {/* <Nav/> */}
     <div className={styles.container}>
       <Head>
         <title>Create Next App</title>
