@@ -24,6 +24,8 @@ export default function MyApp(props) {
     }
   }, []);
 
+  console.log("Vercel_URL: ", process.env.VERCEL_URL)
+
   return (
     <Provider store={store}>
       <NextAuthProvider options={{ site: process.env.SITE }} session={session}>
