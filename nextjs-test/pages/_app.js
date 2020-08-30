@@ -7,8 +7,12 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../theme';
 
+import { Provider } from 'react-redux'
+import { useStore } from '../store'
+
 export default function MyApp(props) {
   const { Component, pageProps } = props;
+  const store = useStore(pageProps.initialReduxState)
 
   React.useEffect(() => {
     // Remove the server-side injected CSS.
@@ -19,6 +23,7 @@ export default function MyApp(props) {
   }, []);
 
   return (
+    <Provider store={store}>
     <React.Fragment>
       <Head>
         <title>My page</title>
@@ -30,6 +35,7 @@ export default function MyApp(props) {
         <Component {...pageProps} />
       </ThemeProvider>
     </React.Fragment>
+    </Provider>
   );
 }
 

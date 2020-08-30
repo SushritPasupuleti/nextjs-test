@@ -68,6 +68,17 @@ export default function Home() {
             </p>
           </a>
           </Link>
+
+          <Link as="/counter" href="/counter">
+          <a
+            className={styles.card}
+          >
+            <h3>Redux powered Counter</h3>
+            <p>
+              A simple Redux powered counter to test Redux functionality in Next.js
+            </p>
+          </a>
+          </Link>
           
         </div>
       </main>
