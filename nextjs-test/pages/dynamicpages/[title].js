@@ -1,11 +1,39 @@
+import Nav from './../../components/nav';
+import { signin, signout, useSession } from 'next-auth/client'
+
 function Post({ post }) {
-  // Render post...
-  return (
-    <div style={{margin: '20px'}}>
-      <h1 >{post.title}</h1>
-      <h3 >{post.body}</h3>
-    </div>
-  )
+  const [session, loading] = useSession()
+
+  if (!session && loading) {
+    return (
+      <div>
+        <Nav></Nav>
+        Loading...
+      </div>
+    )
+  }
+
+  if (!session) {
+    return (
+      <div>
+        <Nav></Nav>
+        Sign in to view
+      </div>
+    )
+  }
+
+  if (session) {
+    return (
+      <div>
+        <Nav></Nav>
+        <div style={{ margin: '20px' }}>
+          <h1 >{post.title}</h1>
+          <h3 >{post.body}</h3>
+          <h5>Viewing as {session.user.email}</h5>
+        </div>
+      </div>
+    )
+  }
 }
 
 export async function getStaticPaths() {
@@ -17,7 +45,7 @@ export async function getStaticPaths() {
     params: { title: post.title },
   }))
 
-   return {
+  return {
     paths,
     fallback: false// See the "fallback" section below
   };
