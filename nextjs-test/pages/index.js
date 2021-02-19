@@ -64,7 +64,7 @@ export default function Home() {
             </p>
           </a>
 
-          <Link as="/something/details" href="/[deets]/[person]">
+          <Link as="dynamic/something/details" href="dynamic/[deets]/[person]">
           <a
             className={styles.card}
           >
