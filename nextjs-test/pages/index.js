@@ -87,6 +87,7 @@ export default function Home() {
           </Link>
           
         </div>
+        <button type="button" class="btn btn-primary">Primary Bootstrap 5 Button from Script</button>
       </main>
 
       <footer className={styles.footer}>
