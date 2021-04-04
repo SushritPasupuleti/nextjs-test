@@ -101,6 +101,18 @@ const options = {
   // when an action is performed.
   // https://next-auth.js.org/configuration/callbacks 
   callbacks: { 
+    signIn: async (user, account, profile) => {
+      const isAllowedToSignIn = true
+      console.log("User Details: ", user, account, profile)
+      if (isAllowedToSignIn) {
+        return true
+      } else {
+        // Return false to display a default error message
+        return false
+        // Or you can return a URL to redirect to:
+        // return '/unauthorized'
+      }
+    }
     // signIn: async (user, account, profile) => { return Promise.resolve(true) },
     // redirect: async (url, baseUrl) => { return Promise.resolve(baseUrl) },
     // session: async (session, user) => { return Promise.resolve(session) },
